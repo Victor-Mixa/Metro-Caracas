@@ -1,16 +1,27 @@
 program MetroC;
 uses crt;
 var
-a,nom, ape: string;
-CI, boletos: integer;
-tipos:char;
+Bol,A,B,C,D,E,F,G,H,I,J,nom,ape: string;
+CI, boletos,tipos: integer;
 //INICIO DEL CODIGO//
 
 BEGIN
+///asignacion de variables///
+A:='1= boleto simple amarillo, un viaje en metro';
+B:=('2= boleto integrado amarillo, un viaje en metro, un viaje en microbus');
+C:=('3= ida y vuelta, boleto amarillo, dos viajes en metro');
+D:=('4=ida y vuelta, boleto amarillo, 2 viajes en metro, 2 viajes en microbus');
+E:=('5=multiabono boleto naranja, 10 viajes en metro');
+F:=('6=MultiAbono integrado, boleto naranja, 10 viajes en metro, 10 viajes en microbus');
+G:=('7=Estudiantil simple, boleto nazul, 10 viajes en metro');
+H:=('8=Estudiantil integrado, boleto azul, 10 viajes en metro, 20 viajes en microbus');
+I:=('9=MetroTarjetas, boleto rojo, 20 viajes, 30 viajes, 40 viajes');
+J:=('10=MetroTarjeta integrada, boleto rojo, 20 viajes (metro y microbus), 30 viajes (metro y microbus, 40 viajes (metro y microbus9');
+///comienzo del programa////
 writeln ('Bienvenido al Metro Caracas, desea comprar boletos?');
-readLN(a);
-if (a='si') then
-//GREGAMOS UN CONDICIONAL PRINCIPALMENTE//
+readLN(Bol);
+if (Bol='si') then
+//AGREGAMOS UN CONDICIONAL//
 	Begin
 	writeln ('porfavor digite su nombre');
 	readln (nom);
@@ -19,26 +30,26 @@ if (a='si') then
 	writeln ('Digite su numero de cedula');
 	readln (CI);
 	//LE PEDIMOS AL USUARIO QUE INGRESE SUS DATOS//
-	
-writeln ('Elija el tipo de boleto que desea comprar desde la A hasta la J');
-
-readln (tipos);
- Case tipos of
- 'A' : writeln('boleto simple amarillo, un viaje en metro');
- 'B': writeln ('boleto integrado amarillo, un viaje en metro, un viaje en microbus');
- 'C': writeln ('ida y vuelta, boleto amarillo, dos viajes en metro');
- 'D' : writeln ('ida y vuelta, boleto amarillo, 2 viajes en metro, 2 viajes en microbus');
- 'E': writeln ('multiabono boleto naranja, 10 viajes en metro');
- 'F':  writeln ('MultiAbono integrado, boleto naranja, 10 viajes en metro, 10 viajes en microbus');
- 'G': writeln ('Estudiantil simple, boleto nazul, 10 viajes en metro');
- 'H': writeln ('Estudiantil integrado, boleto azul, 10 viajes en metro, 20 viajes en microbus');
- 'I': writeln ('MetroTarjetas, boleto rojo, 20 viajes, 30 viajesw, 40 viajes');
- 'J': writeln ('MetroTarjeta integrada, boleto rojo, 20 viajes (metro y microbus), 30 viajes (metro y microbus, 40 viajes (metro y microbus9');
- End;
-End
+clrscr;
+writeln ('Elija el tipo de boleto que desea comprar');
+writeln();
+writeln(A);
+writeln(B);
+writeln(C);
+writeln(D);
+writeln(E);
+writeln(F);
+writeln(G);
+writeln(H);
+writeln(I);
+writeln(J);
+	Readln(tipos);
+clrscr;
+	end
+///En caso de que el usuario NO quiera comprar el boleto///
 Else
 Begin
 WriteLn('que tenga buen dia');
 End
-END.
 
+END.
