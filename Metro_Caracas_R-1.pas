@@ -2,7 +2,7 @@ program MetroC;
 uses crt;
 var
 Bol,nom,ape,rep,EstSal,EstDest: string;
-CI,A,B,C,D,E,F,G,H,I,J,tipos,Num,Viajes,line,buc,totalv,VA,VC,VE,P,M,Gr: integer;
+CI,A,B,C,D,E,F,G,H,I,J,tipos,Num,Viajes,line,buc,totalv,VA,VC,VE,P,M,Gr,pagar,pagado: integer;
 //INICIO DEL CODIGO//
 
 BEGIN
@@ -214,6 +214,18 @@ writeln ('Estas seguro de continuar?');
 		9: writeln('El precio de este boleto es ',I*Num,'$');
 		10: writeln('El precio de este boleto es ',J*Num,'$');
 	end;
+	case tipos of
+		1: pagar:= A*Num;
+		2: pagar:=B*Num;
+		3: pagar:=C*Num;
+		4: pagar:=D*Num;
+		5: pagar:=E*Num;
+		6: pagar:=F*Num;
+		7: pagar:=G*Num;
+		8: pagar:=H*Num;
+		9: pagar:=I*Num;
+		10: pagar:=J*Num;
+	end;
 
 
 /////Seleccion de la linea/////
@@ -247,6 +259,28 @@ WriteLn('Estacion de destino es:',Estdest);
 
 	writeln ('Estas seguro de continuar?');
 	readln(Rep);
+	
+	if rep='si' then
+		begin
+		clrscr;
+		writeln ('Total a pagar:',pagar);
+		readln(pagado);
+	while pagado<pagar do
+		begin
+			writeln('El pago que usted realizo s menor a lo que debe le falta: ',pagar-pagado);
+			pagar:=pagar-pagado;
+			readln (pagado);
+		end;
+		
+	if pagado>pagar then
+		begin
+			writeln ('el pago que usted realizo es mayor a lo que debe le sobra: ',pagado-pagar);
+		end;
+	if pagado>=pagar then
+		begin
+			Writeln('El pago se ha realizado correctamente')
+		end;
+end;
 End
 
 //////En caso de que la persona NO quiera comprar un boleto///////
