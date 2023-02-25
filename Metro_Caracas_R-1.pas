@@ -41,6 +41,7 @@ if (rep='si') then
 	clrscr;
 
 ////Se enlista los tipos de boletos que hay/////
+
 writeln ('Elija el tipo de boleto que desea comprar');
 writeln();
 writeln ('1= boleto simple amarillo, un viaje en metro');
@@ -217,7 +218,7 @@ writeln ('Estas seguro de continuar?');
 
 /////Seleccion de la linea/////
 writeln();
-WriteLn('Desde la linea 1 hatas la linea 8.En que linea desea viajar?');
+WriteLn('Desde la linea 1 hasta la linea 8.En que linea desea viajar?');
 Writeln('Digite un numero del 1 al 8');
 Readln(Line);
 	case Line of
@@ -225,24 +226,27 @@ Readln(Line);
 		2:WriteLn('El silencio, Capuchinos, Maternidad, Artiguas, La Paz, La yaguara, Carapita,    Antimano, Mamera, Caricuao, Zoologico, Ruiz Pineda/Las juntas');
 		3:WriteLn('Plaza Venezuela, Ciudad Universitaria, Los símbolos, La bandera, El Valle, Los jardines, Coche ,Mercado, La Rinconada');
 		4:WriteLn('Zona rental, Parque Central, Nuevo Circo, Teatro, Capuchinos, Maternidad, Artigas, La Paz, La Yaragua, Carapita, Antimano, Mamera, Ruiz Pineda/Las Adjuntas');
-		5:WriteLn('Bello Monte, Las Mercedes, Parque Simón Bolívar, Bello Campo, Hugo Chávez, Monte Cristo, Boleita, El Marquez, Warairarepano');
+		5:WriteLn('Bello Monte, Las Mercedes, Parque Simon Bolivar, Bello Campo, Hugo Chávez, Monte Cristo, Boleita, El Marquez, Warairarepano');
 		6:WriteLn('Zoologico,La Riconada');
-		7:WriteLn('Las flores, Panteón, Socorro, La Hoyada, El Cristo, Roca torpeya, Presidente Medina, INCES, Roosevelt, La Bandera, Los Ilustres');
+		7:WriteLn('Las flores, Panteon, Socorro, La Hoyada, El Cristo, Roca torpeya, Presidente Medina, INCES, Roosevelt, La Bandera, Los Ilustres');
 		8:WriteLn('Petare 2, 19 de abril, 5 de julio, 24 de julio, Warairarepano')
 		else 
 			writeln('esa no es una linea valida');
 		end
 	end;
 
-	for buc:=1 to num do
-		begin
-			WriteLn('Para su boleto ',buc);
-			Writeln('ingrese el nombre de la estacion de salida');
-			readln(EstSal);
-			Writeln('ingrese el nombre de la estacion de destino');
-			readln(EstDest);
-end
+Writeln('ingrese el nombre de la estacion de salida');
+readln(EstSal);
+Writeln('ingrese el nombre de la estacion de destino');
+readln(EstDest);
+		
+Writeln('Los datos suministrados son');
+Writeln(nom,' ',ape,' CI:',CI);
+WriteLn('La estacion de Salida es:',EstSal);
+WriteLn('Estacion de destino es:',Estdest);
 
+	writeln ('Estas seguro de continuar?');
+	readln(Rep);
 End
 
 //////En caso de que la persona NO quiera comprar un boleto///////
