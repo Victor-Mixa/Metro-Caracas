@@ -1,7 +1,7 @@
 program MetroC;
 uses crt;
 var
-Bol,nom,ape,rep: string;
+Bol,nom,ape,rep,EstSal,EstDest: string;
 CI,A,B,C,D,E,F,G,H,I,J,tipos,Num,Viajes,line,buc,totalv,VA,VC,VE,P,M,Gr: integer;
 //INICIO DEL CODIGO//
 
@@ -234,9 +234,14 @@ Readln(Line);
 		end
 	end;
 
-
-Writeln('ingrese el nombre de la estacion de salida');
-readln()
+	for buc:=1 to num do
+		begin
+			WriteLn('Para su boleto ',buc);
+			Writeln('ingrese el nombre de la estacion de salida');
+			readln(EstSal);
+			Writeln('ingrese el nombre de la estacion de destino');
+			readln(EstDest);
+end
 
 End
 
