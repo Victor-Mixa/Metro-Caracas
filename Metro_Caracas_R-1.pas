@@ -2,10 +2,11 @@ program MetroC;
 uses crt;
 var
 Bol,nom,ape,rep,EstSal,EstDest: string;
-CI,A,B,C,D,E,F,G,H,I,J,tipos,Num,Viajes,line,buc,totalv,VA,VC,VE,P,M,Gr,pagar,pagado: integer;
+CI,A,B,C,D,E,F,G,H,I,J,tipos,Num,Viajes,line,buc,totalv,VA,VC,VE,P,M,Gr,pagar,pagado,menu,bolu: integer;
 //INICIO DEL CODIGO//
 
 BEGIN
+bolu:=0;
 ///asignacion de precios///
 A:=5;
 B:=10;
@@ -246,12 +247,13 @@ Readln(Line);
 			writeln('esa no es una linea valida');
 		end
 	end;
-
+	
 Writeln('ingrese el nombre de la estacion de salida');
 readln(EstSal);
 Writeln('ingrese el nombre de la estacion de destino');
 readln(EstDest);
-		
+	
+///Se le mustran los datos del usuario///		
 Writeln('Los datos suministrados son');
 Writeln(nom,' ',ape,' CI:',CI);
 WriteLn('La estacion de Salida es:',EstSal);
@@ -260,6 +262,7 @@ WriteLn('Estacion de destino es:',Estdest);
 	writeln ('Estas seguro de continuar?');
 	readln(Rep);
 	
+///Pago///
 	if rep='si' then
 		begin
 		clrscr;
@@ -278,9 +281,42 @@ WriteLn('Estacion de destino es:',Estdest);
 		end;
 	if pagado>=pagar then
 		begin
-			Writeln('El pago se ha realizado correctamente')
+			Writeln('El pago se ha realizado correctamente');
+			Writeln('elija una opcion');
+			Writeln('1: salir del sistema 2:utilizar boleto 3: ver sistema');
+			readln(menu);
 		end;
-end;
+		
+	if menu=1 then
+		begin
+			writeln('a elejido salir del sistema');
+		end;
+		
+	if menu=2 then
+		begin
+			writeln ('desea utilizarun boleto?');
+			readLn(rep);
+			if (rep='si') then
+				Begin
+					writeln('usted tiene',num,' boletos');
+					Writeln(ci);
+					writeln ('es correcta la cedula?');
+					readLn(rep);
+	
+				if (rep='si') then
+					begin
+						writeln('usted a utilizado un boleto');
+						bolu:=bolu+1;
+						num:=num-1;
+						Writeln('le quedan:',num,' boletos');
+				
+					end
+				end
+			end
+		end;
+
+Writeln('haz utilizado ',bolu,'boletos');
+
 End
 
 //////En caso de que la persona NO quiera comprar un boleto///////
